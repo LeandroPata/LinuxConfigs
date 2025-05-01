@@ -1,0 +1,148 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+# ~/.config/ohmyposh/myprofile.yaml
+# oh-my-posh Theme
+
+palette:
+  black: "#000000"
+  blue: "#43CCEA"
+  green: "#00ff0d"
+  grey: "#272727"
+  orange: "#ff972e"
+  purple: "#5e2db5"
+  red: "#f21b1b"
+  white: "#ffffff"
+  yellow: "#d4cd06"
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - style: plain
+    template: " ⚡ <transparent>\ue0b1 </>"
+    foreground: p:red
+    background: p:black
+    type: root
+  - properties:
+      alpine: 
+      arch: 
+      centos: 
+      debian: 
+      elementary: 
+      endeavouos: 
+      fedora: 
+      gentoo: 
+      linux: 
+      macos: 
+      manjaro: 
+      mint: 
+      opensuse: 
+      raspbian: 
+      ubuntu: 
+      windows: 
+      wsl: 
+    style: plain
+    template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
+    foreground: p:white
+    background: p:grey
+    type: os
+  - properties:
+      folder_icon: 
+      folder_separator_icon: " <transparent>\ue0bd </>"
+      home_icon: 
+      style: agnoster_short
+    style: plain
+    template: " <transparent>\ue0b1 </>{{ .Path }} "
+    foreground: p:blue
+    background: p:grey
+    type: path
+  - properties:
+      fetch_stash_count: true
+      fetch_status: true
+      fetch_upstream_icon: true
+    style: plain
+    template: "<transparent>\ue0b1 </>{{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
+    foreground: p:green
+    background: p:grey
+    type: git
+    foreground_templates:
+    - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}"
+    - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:orange{{ end }}"
+    - "{{ if gt .Ahead 0 }}p:purple{{ end }}"
+    - "{{ if gt .Behind 0 }}p:purple{{ end }}"
+  - properties:
+      style: austin
+      threshold: 0
+    style: plain
+    template: "<transparent>\ue0b1 </>{{ .FormattedMs }}s "
+    foreground: p:white
+    background: p:grey
+    type: executiontime
+  - properties:
+      always_enabled: true
+    style: diamond
+    trailing_diamond: 
+    template: "<transparent>\ue0b1 </>{{ if gt .Code 0 }}\uf00d {{ reason .Code }}{{ else }}\uf00c{{ end }} "
+    foreground: p:white
+    background: p:grey
+    type: status
+    foreground_templates:
+    - "{{ if gt .Code 0 }}p:red{{ else}}p:green{{ end }}"
+  newline: true
+- type: prompt
+  alignment: right
+  segments:
+  - properties:
+      display_mode: files
+      fetch_package_manager: false
+      home_enabled: false
+    style: diamond
+    template: "\ue718 "
+    foreground: p:green
+    background: transparent
+    type: node
+  - properties:
+      fetch_version: false
+    style: plain
+    template: "\ue626 "
+    foreground: p:blue
+    background: transparent
+    type: go
+  - properties:
+      display_mode: files
+      fetch_version: false
+      fetch_virtual_env: false
+    style: plain
+    template: "\ue235 "
+    foreground: p:white
+    background: transparent
+    type: python
+  - style: diamond
+    leading_diamond: 
+    template: " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}<transparent> \ue0b3</>"
+    foreground: p:blue
+    background: p:grey
+    type: session
+  - style: diamond
+    template: " {{ .CurrentDate | date .Format }} "
+    foreground: p:white
+    background: p:grey
+    type: time
+- type: prompt
+  alignment: left
+  segments:
+  - style: plain
+    template: ╰─
+    foreground: p:white
+    background: transparent
+    type: text
+  - properties:
+      always_enabled: true
+    style: plain
+    template: "\ue285\ueab6 "
+    foreground: p:white
+    background: transparent
+    type: status
+    foreground_templates:
+    - "{{ if gt .Code 0 }}p:red{{ end }}"
+  newline: true
+version: 3
+final_space: true
