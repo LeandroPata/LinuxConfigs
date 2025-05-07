@@ -1,175 +1,237 @@
 // ~/.config/fastfetch/config.jsonc
+// My fastfetch config
 
 {
 	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 	"logo": {
-		"source": "~/Pictures/p5maskCropped.gif", // Built-in logo name or file path
-		"type": "kitty-icat", // Logo type: auto, builtin, small, file, etc.
-		"width": 40,
+		"source": "~/Pictures/Assets/Persona/p3CardLogo.txt", // Built-in logo name or file path
+		"type": "file", // Logo type: auto, builtin, small, file, etc.
+		"color": { "1": "light_blue" },
+		"width": 50,
 		"padding": {
-			"top": 4,
-			"left": 2,
-			"right": 5
+			"left": 1
 		}
+	},
+	"display": {
+		"separator": " ➜ "
 	},
 	"modules": [
 		{
 			"type": "title",
-			"format": "                                {6}{7}{8}"
-		},
-		{
-			"type": "custom",
-			"format": "┌──────────────────────────────────────────────────────────────────────────────┐" // `\u001b` is `\033`, or `\e`
+			"color": {
+				"user": "blue",
+				"at": "blue",
+				"host": "blue"
+			},
+
+			"format": "          {6}{7}{8}"
 		},
 		{
 			"type": "os",
-			"key": "     OS           ",
-			"keyColor": "green"
+			"key": " OS         ",
+			"keyColor": "blue",
+			"format": "{3}"
 		},
 		{
 			"type": "host",
-			"key": "    󰪫 Machine      ",
-			"keyColor": "cyan"
+			"key": "  ├󰪫 Machine ",
+			"keyColor": "blue",
+			"format": "{2} {3}"
 		},
 		{
 			"type": "kernel",
-			"key": "     Kernel       ",
-			"keyColor": "blue"
+			"key": "  ├ Kernel  ",
+			"keyColor": "blue",
+			"format": "{1} {2} {4}"
 		},
 		{
 			"type": "initsystem",
-			"key": "     Bootloader   ",
-			"keyColor": "green"
+			"key": "  ├ Boot    ",
+			"keyColor": "blue",
+			"format": "{1} {3}"
 		},
 		{
 			"type": "uptime",
-			"key": "    󰅐 Uptime       ",
-			"keyColor": "cyan"
+			"key": "  ├󰅐 Uptime  ",
+			"keyColor": "blue",
+			"format": "{2} hours, {3} minutes"
 		},
 		{
 			"type": "packages",
-			"key": "     Packages     ",
+			"key": "  ├ Packages",
 			"keyColor": "blue"
-		},
-		{
-			"type": "shell",
-			"key": "     Shell        ",
-			"keyColor": "green"
-		},
-		{
-			"type": "terminal",
-			"key": "     Terminal     ",
-			"keyColor": "cyan"
-		},
-		{
-			"type": "terminalfont",
-			"key": "     Terminal Font",
-			"keyColor": "blue"
-		},
-		{
-			"type": "wm",
-			"key": "     WM           ",
-			"keyColor": "green"
-		},
-		{
-			"type": "wmtheme",
-			"key": "    󰔎 WM Theme     ",
-			"keyColor": "cyan"
 		},
 		{
 			"type": "theme",
-			"key": "    󰔎 Theme        ",
-			"keyColor": "blue"
+			"key": "  ├󰔎 Theme   ",
+			"keyColor": "blue",
+			"format": "{1}"
 		},
 		{
 			"type": "icons",
-			"key": "     Icons        ",
-			"keyColor": "green"
+			"key": "  ├ Icons   ",
+			"keyColor": "blue",
+			"format": "{1}"
 		},
 		{
 			"type": "font",
-			"key": "     Font         ",
-			"keyColor": "cyan"
+			"key": "  ├ Font    ",
+			"keyColor": "blue",
+			"format": "{5}"
 		},
 		{
 			"type": "cursor",
-			"key": "    󰇀 Cursor       ",
-			"keyColor": "blue"
+			"key": "  └󰇀 Cursor  ",
+			"keyColor": "blue",
+			"format": "{1} ({2})"
+		},
+		"break",
+		{
+			"type": "shell",
+			"key": " Shell      ",
+			"keyColor": "blue",
+			"format": "{6}"
 		},
 		{
-			"type": "locale",
-			"key": "     Locale       ",
-			"keyColor": "green"
+			"type": "terminal",
+			"key": "  ├ Terminal",
+			"keyColor": "blue",
+			"format": "{5}"
 		},
+		{
+			"type": "terminalfont",
+			"key": "  └ Font    ",
+			"keyColor": "blue",
+			"format": "{1}"
+		},
+		"break",
 		{
 			"type": "de",
-			"key": "    󰧨 DE           ",
-			"keyColor": "cyan"
+			"key": "󰧨 DE         ",
+			"keyColor": "blue",
+			"format": "{2} {3}"
+		},
+		{
+			"type": "wm",
+			"key": "  ├ WM      ",
+			"keyColor": "blue",
+			"detectPlugin": true,
+			"format": "{3}"
+		},
+		{
+			"type": "wmtheme",
+			"key": "  └󰔎 WM Theme",
+			"keyColor": "blue",
+			"format": "{1}"
+		},
+		"break",
+		{
+			"type": "title",
+			"key": "󰪫 Hardware   ",
+			"keyColor": "blue",
+			"format": "{2}"
 		},
 		{
 			"type": "display",
-			"key": "    󰍹 Display      ",
-			"keyColor": "blue"
+			"key": "  ├󰍹 Display ",
+			"keyColor": "blue",
+			"format": "{6} {1}x{2} {12}' @ {3}Hz"
 		},
 		{
 			"type": "board",
-			"key": "    󰚗 Motherboard  ",
-			"keyColor": "green"
+			"key": "  ├󰚗 MB      ",
+			"keyColor": "blue",
+			"format": "{1}"
 		},
 		{
 			"type": "cpu",
-			"key": "     CPU          ",
-			"keyColor": "cyan"
+			"key": "  ├ CPU     ",
+			"keyColor": "blue",
+			"temp": {
+				"green": 60,
+				"yellow": 75
+			},
+			"format": "{1} ({3}c {4}t) @ {6} - {8}"
 		},
 		{
 			"type": "gpu",
-			"key": "     GPU          ",
-			"keyColor": "blue"
+			"key": "  ├ GPU     ",
+			"keyColor": "blue",
+			"detectionMethod": "auto",
+			"driverSpecific": true,
+			"temp": {
+				"green": 60,
+				"yellow": 75
+			},
+			"format": "{2} {8} / {7}({14}) - {4}"
 		},
 		{
 			"type": "memory",
-			"key": "     Memory       ",
-			"keyColor": "green"
+			"key": "  ├ Memory  ",
+			"keyColor": "blue",
+			"percent": {
+				"type": 11,
+				"green": 60,
+				"yellow": 90
+			},
+			"format": "{1} / {2} {3}{4}"
 		},
 		{
 			"type": "disk",
-			"key": "     Disk         ",
-			"keyColor": "cyan"
-		},
-		{
-			"type": "sound",
-			"key": "     Sound        ",
-			"keyColor": "blue"
-		},
-		{
-			"type": "localip",
-			"key": "    󰩟 Local IP     ",
-			"keyColor": "green",
-			"compact": true
-		},
-		{
-			"type": "wifi",
-			"key": "     Wifi         ",
-			"keyColor": "cyan"
+			"key": "  ├ Disk    ",
+			"keyColor": "blue",
+			"percent": {
+				"type": 11,
+				"green": 75,
+				"yellow": 90
+			},
+			"format": "{20}: {1} / {2} {3}{13} ({9})"
 		},
 		{
 			"type": "battery",
-			"key": "     Battery      ",
+			"key": "  ├ Battery ",
 			"keyColor": "blue"
 		},
 		{
 			"type": "poweradapter",
-			"key": "    󰚥 Power        ",
-			"keyColor": "green"
+			"key": "  ├󰚥 Power   ",
+			"keyColor": "blue"
 		},
 		{
-			"type": "custom",
-			"format": "└──────────────────────────────────────────────────────────────────────────────┘" // `\u001b` is `\033`, or `\e`
+			"type": "gamepad",
+			"key": "  ├󰖺 Gamepad ",
+			"keyColor": "blue",
+			"percent": {
+				"type": 11,
+				"green": 50,
+				"yellow": 25
+			},
+			"format": "{1} {3}{4}"
+		},
+		{
+			"type": "sound",
+			"key": "  └ Sound   ",
+			"keyColor": "blue",
+			"soundType": "main",
+			"percent": { "type": 11, "green": 50, "yellow": 25 },
+			"format": "{2} {3}{5}"
+		},
+		"break",
+		{
+			"type": "localip",
+			"key": "󰩟 Network    ",
+			"keyColor": "blue",
+			"compact": true
+		},
+		{
+			"type": "wifi",
+			"key": "  └ Wifi    ",
+			"keyColor": "blue"
 		},
 		"break",
 		{
 			"type": "colors",
-			"paddingLeft": 25
+			"paddingLeft": 15
 		}
 	]
 }
