@@ -81,6 +81,8 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias bundletool='java -jar $ANDROID_SDK_ROOT/bundletool/bundletool-all.jar'
+alias cp='/usr/local/bin/advcp -g'
+alias mv='/usr/local/bin/advmv -g'
 
 # Shell integrations
 eval "$(fzf --zsh)"

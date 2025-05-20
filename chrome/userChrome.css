@@ -1,0 +1,141 @@
+/* ~/.zen/tizo6sbm.Default (release)/chrome/userChrome.css */
+/*
+
+This is an example userChrome.css file. Use it if you don't already have a userChrome file.
+If you already have one, append the import statement below at the top of your userChrome file.
+
+*/
+
+@import 'natsumi/natsumi.css';
+
+/* You can import additional mods above, or add your own userchrome CSS below. */
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--zen-colors-primary: #1a1c1e !important;
+		--zen-primary-color: #0db0f4 !important;
+		--zen-colors-secondary: #1a1c1e !important;
+		--zen-colors-tertiary: #1a1c1e !important;
+		--zen-colors-border: color-mix(
+			in srgb,
+			var(--zen-colors-secondary) 10%,
+			rgba(255, 255, 255, 0.11) 90%
+		) !important;
+		--toolbarbutton-icon-fill: #0db0f4 !important;
+		--lwt-text-color: #c4d5e7 !important;
+		--toolbar-field-color: #0db0f4 !important;
+		--tab-selected-textcolor: #0db0f4 !important;
+		--toolbar-field-focus-color: #c4d5e7 !important;
+		--toolbar-color: #0db0f4 !important;
+		--newtab-text-primary-color: #c4d5e7 !important;
+		--arrowpanel-color: #c4d5e7 !important;
+		--arrowpanel-background: #1a1c1e !important;
+		--sidebar-text-color: #c4d5e7 !important;
+		--lwt-sidebar-text-color: #c4d5e7 !important;
+		--lwt-sidebar-background-color: #1a1c1e !important;
+		--toolbar-bgcolor: #1a1c1e !important;
+		--newtab-background-color: #be0a07 !important;
+		--zen-themed-toolbar-bg: #1a1c1e !important;
+		--zen-main-browser-background: #1a1c1e !important;
+		--toolbox-bgcolor-inactive: #1a1c1e !important;
+		--zen-main-browser-background-toolbar: #1a1c1e !important;
+	}
+
+	#permissions-granted-icon {
+		color: #0db0f4 !important;
+	}
+
+	.sidebar-placesTree {
+		background-color: #1a1c1e !important;
+	}
+
+	#zen-workspaces-button {
+		background-color: #1a1c1e !important;
+	}
+
+	#TabsToolbar {
+		background-color: #1a1c1e !important;
+	}
+
+	#urlbar-background {
+		background-color: #1a1c1e !important;
+	}
+
+	.content-shortcuts {
+		background-color: #be0a07 !important;
+		border-color: #be0a07 !important;
+	}
+
+	.urlbarView-url {
+		color: #0db0f4 !important;
+	}
+
+	#zenEditBookmarkPanelFaviconContainer {
+		background: #1a1c1e !important;
+	}
+
+	toolbar .toolbarbutton-1 {
+		&:not([disabled]) {
+			&:is([open], [checked])
+				> :is(
+					.toolbarbutton-icon,
+					.toolbarbutton-text,
+					.toolbarbutton-badge-stack
+				) {
+				fill: #1a1c1e;
+			}
+		}
+	}
+
+	#zen-workspaces-button {
+		.subviewbutton {
+			&[active] {
+				border: 1px solid
+					color-mix(
+						in srgb,
+						var(--zen-colors-secondary) 10%,
+						rgba(255, 255, 255, 0.5) 90%
+					) !important;
+				background-color: rgba(13, 176, 244, 0.5) !important;
+			}
+		}
+	}
+
+	#zen-main-app-wrapper:not(:has(#zen-welcome)) {
+  & #zen-essentials-wrapper {
+		& .tabbrowser-tab {
+			& > .tab-stack > .tab-background {
+				border: 1px solid
+					rgba(13, 176, 244, 0.4) !important;
+			}
+		}
+	}
+}
+	
+	@media not -moz-pref("natsumi.urlbar.disabled") {
+  #urlbar {
+    &:not([breakout-extend="true"]) {
+      &:hover #urlbar-background {
+        background: color-mix(in srgb, var(--natsumi-primary-color) 25%, transparent) !important;
+      }
+    }
+  }
+}
+	
+	:has(.tabbrowser-tab[selected][busy]):not(:has(hbox.zen-glance-background)):not(:has(hbox.zen-glance-overlay)) {
+	@media not -moz-pref("natsumi.theme.disable-urlbar-animation") {
+      #urlbar:not([breakout-extend="true"]) {
+        #urlbar-background {
+          &::before {
+            background: linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0) 0%,
+                    var(--natsumi-colors-secondary) 33%,
+                   rgba(0,0,0,0) 66%,
+                    var(--natsumi-colors-secondary) 100%
+            ) !important;
+          }
+        }
+      }
+    }
+  }
