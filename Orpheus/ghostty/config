@@ -55,6 +55,7 @@ palette = 3=#FEE400
 palette = 4=#0DB0F4
 palette = 11=#FEE400
 palette = 12=#C4D5E7
+selection-background= #0DB0F4
 
 
 # Window

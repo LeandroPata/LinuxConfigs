@@ -1,0 +1,59 @@
+/* The name of the window itself */
+#window {
+	background-color: rgba(26, 28, 30, 0.8);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+		0 4px 6px -4px rgba(0, 0, 0, 0.1);
+	font-size: 1.5rem;
+}
+
+/* The name of the box that contains everything */
+#outer-box {
+	border: 1px solid rgba(13, 176, 244, 0.8);
+	overflow: hidden;
+}
+
+/* The name of the search bar */
+#input {
+	background-color: rgba(26, 28, 30, 0.8);
+	color: #0db0f4;
+	border: none;
+	border-radius: 0;
+	border-bottom: 2px solid rgba(13, 176, 244, 0.8);
+	padding: 0.8rem 1rem;
+	font-size: 1.5rem;
+}
+
+#input:focus,
+#input:focus-visible,
+#input:active {
+	border: none;
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}
+
+/* The name of the scrolled window containing all of the entries */
+#scroll {
+}
+
+/* The name of the box containing all of the entries */
+#inner-box {
+}
+
+/* The name of all entries */
+#entry {
+	color: #c4d5e7;
+	background-color: rgba(26, 28, 30, 0.8);
+	padding: 0.6rem 1rem;
+}
+
+/* The name of all images in entries displayed in image mode */
+#img {
+	width: 1rem;
+	margin-right: 0.5rem;
+}
+
+#entry:selected {
+	color: #c4d5e7;
+	background-color: rgba(13, 176, 244, 0.8);
+	outline: none;
+}

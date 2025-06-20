@@ -1,0 +1,25 @@
+# ~/.config/wofi/config
+
+# Mode: application launcher + run prompt
+show=drun
+dmenu-parse_action=true
+term=ghostty
+
+# Appearance
+width=30%
+height=40%
+prompt=Search
+normal_window=false
+image_size=40
+
+# Behavior
+allow_images=true
+allow_markup=true
+hide_scroll=true
+insensitive=true
+exec_search=true
+matching=fuzzy
+sort_order=alphabetical
+
+# Positioning
+location=0
