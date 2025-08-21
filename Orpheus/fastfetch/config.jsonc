@@ -167,7 +167,18 @@
 		},
 		{
 			"type": "memory",
-			"key": "  ├ Memory  ",
+			"key": "  ├ RAM     ",
+			"keyColor": "blue",
+			"percent": {
+				"type": 11,
+				"green": 60,
+				"yellow": 90
+			},
+			"format": "{1} / {2} {3}{4}"
+		},
+		{
+			"type": "swap",
+			"key": "  ├ Swap    ",
 			"keyColor": "blue",
 			"percent": {
 				"type": 11,
