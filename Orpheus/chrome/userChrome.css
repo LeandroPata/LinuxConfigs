@@ -6,8 +6,6 @@ If you already have one, append the import statement below at the top of your us
 
 */
 
-@import 'natsumi/natsumi.css';
-
 /* You can import additional mods above, or add your own userchrome CSS below. */
 
 @media (prefers-color-scheme: dark) {
@@ -111,31 +109,3 @@ If you already have one, append the import statement below at the top of your us
 		}
 	}
 }
-	
-	@media not -moz-pref("natsumi.urlbar.disabled") {
-  #urlbar {
-    &:not([breakout-extend="true"]) {
-      &:hover #urlbar-background {
-        background: color-mix(in srgb, var(--natsumi-primary-color) 25%, transparent) !important;
-      }
-    }
-  }
-}
-	
-	:has(.tabbrowser-tab[selected][busy]):not(:has(hbox.zen-glance-background)):not(:has(hbox.zen-glance-overlay)) {
-	@media not -moz-pref("natsumi.theme.disable-urlbar-animation") {
-      #urlbar:not([breakout-extend="true"]) {
-        #urlbar-background {
-          &::before {
-            background: linear-gradient(
-                    90deg,
-                    rgba(0,0,0,0) 0%,
-                    var(--natsumi-colors-secondary) 33%,
-                   rgba(0,0,0,0) 66%,
-                    var(--natsumi-colors-secondary) 100%
-            ) !important;
-          }
-        }
-      }
-    }
-  }
